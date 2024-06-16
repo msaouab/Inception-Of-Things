@@ -11,17 +11,13 @@ sudo apk add --no-cache curl vim
 
 # Install K3s
 curl -sfL https://get.k3s.io | sh -
-
-# Set KUBECONFIG environment variable
+sleep 5
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
-# Wait for K3s to be ready
-while [ ! -f /var/lib/rancher/k3s/server/node-token ]; do
-    sleep 1
-done
+# while [ ! -f /var/lib/rancher/k3s/server/node-token ]; do
+#     sleep 1
+# done
 
 sudo chmod +r /etc/rancher/k3s/k3s.yaml
 
-# Deploy the application (replace with your deployment manifest)
-kubectl apply -f /home/vagrant/confs/app1.yaml
-kubectl apply -f /home/vagrant/confs/app2.yaml
+kubectl apply -f /home/vagrant/confs/.

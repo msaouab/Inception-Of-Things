@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 			vb.memory = MEMORY
 			vb.cpus = CPUS
 		end
-	s.vm.synced_folder "./confs", "/home/vagrant/confs"
+	s.vm.synced_folder "./confs", "/home/vagrant/confs", create: true
 	s.vm.provision "shell", path: "./tools/setup.sh"
 	end
 end
