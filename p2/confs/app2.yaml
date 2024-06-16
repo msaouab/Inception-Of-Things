@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: app2
-        image: uzyexe/tetris
+        image: kaminskypavel/mario
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -27,4 +27,4 @@ spec:
     app: app2
   ports:
   - port: 80
-    targetPort: 3000
+    targetPort: 8080

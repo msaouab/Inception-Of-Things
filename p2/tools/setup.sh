@@ -14,9 +14,10 @@ curl -sfL https://get.k3s.io | sh -
 sleep 5
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
-# while [ ! -f /var/lib/rancher/k3s/server/node-token ]; do
-#     sleep 1
-# done
+while [ ! -f /var/lib/rancher/k3s/server/node-token ]; do
+	echo "Waiting for node token..."
+    sleep 1
+done
 
 sudo chmod +r /etc/rancher/k3s/k3s.yaml
 
